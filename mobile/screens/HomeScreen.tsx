@@ -329,7 +329,6 @@ export default function HomeScreen({ navigation }: Props) {
 
   const renderEmpty = () => (
     <View style={styles.emptyState}>
-      <Text style={styles.emptyIcon}>✨</Text>
       <Text style={styles.emptyTitle}>You’re all caught up!</Text>
       <Text style={styles.emptySubtitle}>Create your first task.</Text>
     </View>

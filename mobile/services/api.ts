@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // IMPORTANT: Change this to your machine's IP address
 // Find your IP: On Mac/Linux run `ipconfig getifaddr en0` or `hostname -I`
 // Your phone must be on the same WiFi network as your computer
-const API_BASE_URL = 'http://10.12.26.185:5000/api';
+const API_BASE_URL = 'https://task-tracker-mgbj.onrender.com/api';
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {

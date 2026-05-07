@@ -26,27 +26,27 @@ project-root/
 
 ## Features
 
-✅ **User Authentication**
+ **User Authentication**
 - Signup with email validation
 - Login with JWT tokens
 - Token persistence with AsyncStorage
 - Secure password hashing with bcrypt
 
-✅ **Task Management**
+ **Task Management**
 - Create, read, update, and delete tasks
 - Set task priority (low, medium, high)
 - Mark tasks as complete/incomplete
 - Pull-to-refresh functionality
 - Real-time UI updates
 
-✅ **3D UI Design**
+ **3D UI Design**
 - Glassmorphic design with blur effects
 - Gradient backgrounds
 - Smooth animations and transitions
 - Dark theme with accent colors
 - Professional shadows and depth
 
-✅ **State Management**
+**State Management**
 - TanStack Query (React Query) for data fetching
 - Automatic cache invalidation
 - Optimistic updates
@@ -317,5 +317,3 @@ For issues or questions:
 5. Ensure API URL is correct in `services/api.ts`
 
 ---
-
-**Made with ❤️ using React Native, Node.js, and MongoDB**

@@ -1,8 +1,6 @@
 # Quick Start Guide - Task Tracker App
 
-## ⚡ 5-Minute Setup
-
-### Step 1: Backend (3 minutes)
+### Step 1: Backend 
 
 ```bash
 # 1. Navigate to backend
@@ -16,7 +14,7 @@ cd backend
 npm install
 npm run dev
 
-# ✅ You should see: "✓ Server running on http://localhost:5000"
+
 ```
 
 ### Step 2: Frontend (2 minutes)
@@ -41,7 +39,7 @@ npm start
 
 ---
 
-## 🔑 Key Configuration Files
+## Key Configuration Files
 
 ### Backend `.env`
 ```
@@ -59,7 +57,7 @@ const API_BASE_URL = 'http://YOUR_LOCAL_IP:5000/api';
 
 ---
 
-## 🧪 Test the App
+## Test the App
 
 ### 1. Create Account
 - Open app → Signup
@@ -79,7 +77,7 @@ const API_BASE_URL = 'http://YOUR_LOCAL_IP:5000/api';
 
 ---
 
-## 📱 Running on Phone vs Emulator
+##  Running on Phone vs Emulator
 
 ### Android Emulator
 ```bash
@@ -104,7 +102,7 @@ npm start
 
 ---
 
-## ⚠️ Common Issues
+##  Common Issues
 
 | Issue | Solution |
 |-------|----------|
@@ -116,7 +114,7 @@ npm start
 
 ---
 
-## 📊 API Endpoints (Backend)
+## API Endpoints (Backend)
 
 ```bash
 # Test health check
@@ -139,7 +137,7 @@ curl -X GET http://localhost:5000/api/tasks \
 
 ---
 
-## 📦 Folder Structure
+## Folder Structure
 
 ```
 project/
@@ -177,7 +175,7 @@ project/
 
 ---
 
-## 🎨 UI Features
+##  UI Features
 
 ✨ **3D Glassmorphic Design**
 - Translucent cards with blur effects
@@ -188,7 +186,7 @@ project/
 
 ---
 
-## 🚀 Deployment (Later)
+## Deployment (Later)
 
 ### Backend → Render/Railway/Heroku
 ```bash
@@ -210,21 +208,19 @@ eas build --platform ios
 
 ---
 
-## 📝 Features Implemented
+##  Features Implemented
 
-- ✅ User signup/login with JWT
-- ✅ Secure password hashing (bcrypt)
-- ✅ CRUD operations for tasks
-- ✅ Task priorities (Low/Medium/High)
-- ✅ Mark tasks complete/incomplete
-- ✅ Pull-to-refresh functionality
-- ✅ 3D glassmorphic UI design
-- ✅ Dark theme with animations
-- ✅ TypeScript for type safety
-- ✅ TanStack Query for state management
-- ✅ Automatic token handling
-- ✅ Error handling and validation
+-  User signup/login with JWT
+-  Secure password hashing (bcrypt)
+-  CRUD operations for tasks
+-  Task priorities (Low/Medium/High)
+-  Mark tasks complete/incomplete
+-  Pull-to-refresh functionality
+-  3D glassmorphic UI design
+-  Dark theme with animations
+-  TypeScript for type safety
+-  TanStack Query for state management
+-  Automatic token handling
+-  Error handling and validation
 
 ---
-
-**Happy task tracking! 🎯**

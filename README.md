@@ -1,319 +1,641 @@
-# Task Tracker App - Full Stack
+# Task Tracker Mobile App
 
-A modern task management app built with React Native, Node.js, and MongoDB
+A modern full-stack Task Tracker Mobile Application built using React Native, Expo, TypeScript, Node.js, Express.js, and MongoDB Atlas.
 
-## Project Structure
+This project was developed as part of a Full Stack Developer Internship Assignment and demonstrates frontend + backend integration, authentication, REST APIs, state management, cloud deployment, and modern mobile UI/UX practices.
 
+---
+
+# Live Backend Deployment
+
+Backend deployed on Render:
+
+```txt
+https://task-tracker-mgbj.onrender.com
 ```
+
+---
+
+# Project Overview
+
+This application allows users to:
+
+* Create an account
+* Login securely using JWT authentication
+* Create and manage tasks
+* Mark tasks as completed
+* Delete tasks
+* Filter tasks by status
+* Track task completion progress
+* Persist login sessions
+* Experience a modern glassmorphic mobile UI
+
+The project uses:
+
+* React Native with Expo for frontend
+* Node.js + Express.js for backend
+* MongoDB Atlas for cloud database
+* TanStack Query for server state management
+* JWT authentication for secure API access
+* Render for backend deployment
+
+---
+
+# Features
+
+## Authentication System
+
+### User Signup
+
+* Secure user registration
+* Email validation
+* Password hashing using bcryptjs
+* JWT token generation
+
+### User Login
+
+* JWT-based authentication
+* Secure token storage using AsyncStorage
+* Persistent user session
+
+### Protected APIs
+
+* Auth middleware for protected routes
+* Token verification on each request
+
+---
+
+# Task Management Features
+
+## Core Features
+
+* Create tasks
+* View all tasks
+* Mark tasks as completed/incomplete
+* Delete tasks
+* Pull-to-refresh task list
+* Real-time task updates
+
+## Task Fields
+
+Each task includes:
+
+* Title
+* Optional Description
+* Completion Status
+* Priority Level
+* Created Timestamp
+
+---
+
+# Bonus Features Implemented
+
+## Task Filters
+
+Users can filter tasks by:
+
+* All
+* Pending
+* Completed
+
+---
+
+## Task Statistics Dashboard
+
+Dashboard cards display:
+
+* Total Tasks
+* Completed Tasks
+* Pending Tasks
+
+---
+
+## Progress Tracking
+
+Task completion progress bar with completion percentage.
+
+Example:
+
+```txt
+75% Tasks Completed
+```
+
+---
+
+## Improved UI/UX
+
+### Glassmorphic Design
+
+* Modern translucent cards
+* Blur effects
+* Soft shadows
+* Rounded corners
+
+### Smooth Animations
+
+* Task creation animations
+* Completion animations
+* Delete transitions
+
+### Empty State UI
+
+* Styled empty task state
+* User-friendly placeholders
+
+### Responsive Layout
+
+* Optimized for mobile devices
+* Clean typography
+* Better spacing and alignment
+
+---
+
+# Tech Stack
+
+# Frontend
+
+| Technology     | Purpose                |
+| -------------- | ---------------------- |
+| React Native   | Mobile app development |
+| Expo           | Development platform   |
+| TypeScript     | Type safety            |
+| TanStack Query | API state management   |
+| Axios          | API requests           |
+| AsyncStorage   | Local token storage    |
+
+---
+
+# Backend
+
+| Technology    | Purpose               |
+| ------------- | --------------------- |
+| Node.js       | Runtime environment   |
+| Express.js    | Backend framework     |
+| MongoDB Atlas | Cloud database        |
+| Mongoose      | MongoDB ODM           |
+| JWT           | Authentication        |
+| bcryptjs      | Password hashing      |
+| dotenv        | Environment variables |
+
+---
+
+# Deployment
+
+| Service       | Purpose            |
+| ------------- | ------------------ |
+| Render        | Backend hosting    |
+| MongoDB Atlas | Database hosting   |
+| Expo Go       | Mobile app testing |
+
+---
+
+# Folder Structure
+
+```bash
 project-root/
-├── backend/                 # Node.js + Express API
+│
+├── backend/
 │   ├── src/
-│   │   ├── models/         # MongoDB models (User, Task)
-│   │   ├── controllers/    # Business logic
-│   │   ├── routes/         # API endpoints
-│   │   ├── middleware/     # Auth middleware
-│   │   └── index.js        # Main server file
-│   ├── .env               # Environment variables
-│   └── package.json
-└── mobile/                 # React Native app
-    ├── screens/           # App screens
-    ├── services/          # API & Query services
-    ├── types/            # TypeScript types
-    ├── App.tsx           # Root component
-    ├── app.json          # Expo config
+│   │   ├── controllers/
+│   │   │   ├── authController.js
+│   │   │   └── taskController.js
+│   │   │
+│   │   ├── middleware/
+│   │   │   └── authMiddleware.js
+│   │   │
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   └── Task.js
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js
+│   │   │   └── taskRoutes.js
+│   │   │
+│   │   └── index.js
+│   │
+│   ├── package.json
+│   └── .env
+│
+└── mobile/
+    ├── screens/
+    │   ├── LoginScreen.tsx
+    │   ├── SignupScreen.tsx
+    │   └── HomeScreen.tsx
+    │
+    ├── services/
+    │   ├── api.ts
+    │   └── queries.ts
+    │
+    ├── types/
+    │   └── index.ts
+    │
+    ├── App.tsx
+    ├── app.json
     └── package.json
 ```
 
-## Features
+---
 
- **User Authentication**
-- Signup with email validation
-- Login with JWT tokens
-- Token persistence with AsyncStorage
-- Secure password hashing with bcrypt
+# Backend API Endpoints
 
- **Task Management**
-- Create, read, update, and delete tasks
-- Set task priority (low, medium, high)
-- Mark tasks as complete/incomplete
-- Pull-to-refresh functionality
-- Real-time UI updates
+# Authentication APIs
 
- **3D UI Design**
-- Glassmorphic design with blur effects
-- Gradient backgrounds
-- Smooth animations and transitions
-- Dark theme with accent colors
-- Professional shadows and depth
+## Signup
 
-**State Management**
-- TanStack Query (React Query) for data fetching
-- Automatic cache invalidation
-- Optimistic updates
-- Error handling
-
-## Tech Stack
-
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB (Atlas)
-- **Authentication**: JWT (jsonwebtoken)
-- **Password**: bcryptjs
-
-### Frontend
-- **Framework**: React Native with Expo
-- **Language**: TypeScript
-- **State Management**: TanStack Query
-- **Navigation**: React Navigation
-- **HTTP Client**: Axios
-- **Storage**: AsyncStorage
-
-## Prerequisites
-
-1. **Node.js** (v16 or higher)
-2. **MongoDB Atlas Account** (Free tier available at mongodb.com/cloud/atlas)
-3. **Expo CLI** - Install with `npm install -g expo-cli`
-4. **Mobile Device or Emulator** (Android Studio or Xcode)
-
-## Setup Instructions
-
-### 1. Backend Setup
-
-#### Step 1: Create MongoDB Database
-1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a free account and log in
-3. Create a new project and cluster (Free tier)
-4. Create a database user with a password
-5. Get your connection string: `mongodb+srv://username:password@cluster.mongodb.net/task-tracker?retryWrites=true&w=majority`
-
-#### Step 2: Configure Backend Environment
-```bash
-cd backend
-
-# Update .env file with your MongoDB URI
-# Replace the values in .env:
-# MONGODB_URI=mongodb+srv://your_username:your_password@cluster.mongodb.net/task-tracker?retryWrites=true&w=majority
-# JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
-# PORT=5000
+```http
+POST /api/auth/signup
 ```
 
-#### Step 3: Install Dependencies & Start Server
-```bash
-# Install dependencies
-npm install
+### Request Body
 
-# Start the server
-npm run dev
-```
-
-You should see:
-```
-✓ Connected to MongoDB
-✓ Server running on http://localhost:5000
-✓ API endpoint: http://localhost:5000/api
-```
-
-### 2. Frontend Setup
-
-#### Step 1: Install Dependencies
-```bash
-cd mobile
-
-npm install
-# or
-yarn install
-```
-
-#### Step 2: Configure API URL
-**IMPORTANT**: Update the API base URL in `mobile/services/api.ts`:
-
-```typescript
-// Find your machine's IP address:
-// macOS/Linux: ifconfig | grep "inet " | grep -v 127.0.0.1
-// Windows: ipconfig (look for IPv4 Address)
-
-// Example: 192.168.1.100
-const API_BASE_URL = 'http://192.168.1.100:5000/api'; // Change IP here
-```
-
-**Requirements**:
-- Your phone and computer must be on the **same WiFi network**
-- Use your machine's local IP address, NOT localhost
-- Make sure the backend is running before starting the app
-
-#### Step 3: Start Expo App
-```bash
-# Start the development server
-npx expo start
-
-# Then:
-# - Press 'a' for Android emulator
-# - Press 'i' for iOS simulator
-# - Scan QR code with Expo Go app on your phone
-```
-
-## API Endpoints
-
-### Authentication
-```
-POST   /api/auth/signup
-POST   /api/auth/login
-```
-
-### Tasks (Protected - Requires Token)
-```
-GET    /api/tasks              # Get all user tasks
-POST   /api/tasks              # Create new task
-PUT    /api/tasks/:id          # Update task
-DELETE /api/tasks/:id          # Delete task
-```
-
-## Testing with API Client
-
-### Using Thunder Client (VS Code Extension)
-1. Create new request
-2. Set method to POST
-3. URL: `http://localhost:5000/api/auth/login`
-4. Body (JSON):
 ```json
 {
-  "email": "test@example.com",
+  "name": "Aditi Jain",
+  "email": "aditi@example.com",
   "password": "password123"
 }
 ```
 
-### Request Example
-```bash
-curl -X POST http://localhost:5000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password123"}'
+---
+
+## Login
+
+```http
+POST /api/auth/login
 ```
 
-### Get Tasks (with Auth)
-```bash
-curl -X GET http://localhost:5000/api/tasks \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE"
+### Request Body
+
+```json
+{
+  "email": "aditi@example.com",
+  "password": "password123"
+}
 ```
 
-## Troubleshooting
+---
 
-### Backend Issues
+# Task APIs
 
-**"Cannot find module 'mongoose'"**
+## Get All Tasks
+
+```http
+GET /api/tasks
+```
+
+Requires JWT Token.
+
+---
+
+## Create Task
+
+```http
+POST /api/tasks
+```
+
+### Request Body
+
+```json
+{
+  "title": "Complete Assignment",
+  "description": "Finish React Native internship task",
+  "priority": "high"
+}
+```
+
+---
+
+## Update Task
+
+```http
+PATCH /api/tasks/:id
+```
+
+Used for:
+
+* Marking task completed
+* Updating task details
+
+---
+
+## Delete Task
+
+```http
+DELETE /api/tasks/:id
+```
+
+---
+
+# Authentication Flow
+
+1. User signs up or logs in.
+2. Backend validates credentials.
+3. Passwords are securely hashed using bcryptjs.
+4. JWT token is generated.
+5. Token stored locally using AsyncStorage.
+6. Frontend attaches token in Authorization headers.
+7. Protected APIs validate token using middleware.
+
+---
+
+# Database Schema
+
+# User Schema
+
+Fields:
+
+* name
+* email
+* password
+
+Passwords are hashed before storing.
+
+---
+
+# Task Schema
+
+Fields:
+
+* title
+* description
+* completed
+* priority
+* user reference
+* createdAt
+* updatedAt
+
+---
+
+# State Management
+
+TanStack Query is used for:
+
+* Fetching tasks
+* Creating tasks
+* Updating tasks
+* Deleting tasks
+* Cache invalidation
+* Loading states
+* Error handling
+
+Benefits:
+
+* Cleaner API handling
+* Automatic refetching
+* Better UX
+* Optimized state synchronization
+
+---
+
+# Security Features
+
+## Password Security
+
+Passwords are hashed using bcryptjs.
+
+---
+
+## JWT Authentication
+
+JWT tokens secure protected routes.
+
+---
+
+## Protected APIs
+
+Task routes require authentication middleware.
+
+---
+
+## Environment Variables
+
+Sensitive credentials stored in `.env`.
+
+---
+
+# Backend Deployment (Render)
+
+The backend is deployed using Render.
+
+## Deployment Steps
+
+1. Push backend code to GitHub
+2. Connect repository to Render
+3. Configure Root Directory as:
+
+```txt
+backend
+```
+
+4. Add environment variables:
+
+```env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+NODE_ENV=production
+```
+
+5. Deploy Web Service
+
+---
+
+# MongoDB Atlas Setup
+
+1. Create MongoDB Atlas account
+2. Create cluster
+3. Create database user
+4. Add IP access
+5. Copy MongoDB connection string
+6. Add connection string in backend `.env`
+
+---
+
+# Frontend Setup
+
+# Install Dependencies
+
+```bash
+cd mobile
+npm install
+```
+
+---
+
+# Configure API URL
+
+Inside:
+
+```txt
+mobile/services/api.ts
+```
+
+Use:
+
+```ts
+const API_BASE_URL = 'https://task-tracker-mgbj.onrender.com/api';
+```
+
+---
+
+# Run Expo App
+
+```bash
+npx expo start
+```
+
+Then:
+
+* Scan QR code using Expo Go
+* Or run on emulator
+
+---
+
+# Backend Setup
+
+# Install Dependencies
+
 ```bash
 cd backend
 npm install
 ```
 
-**"MongoDB connection failed"**
-- Check your connection string in `.env`
-- Verify MongoDB Atlas IP whitelist includes your IP
-- Check username/password in connection string
+---
 
-**"Port 5000 already in use"**
-```bash
-# macOS/Linux:
-lsof -i :5000
-kill -9 <PID>
+# Create .env File
 
-# Windows:
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
+```env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+PORT=5000
+NODE_ENV=development
 ```
-
-### Frontend Issues
-
-**"Cannot reach backend API"**
-- Verify backend is running: `http://localhost:5000/api/health`
-- Check your IP address in `api.ts` matches your machine's IP
-- Ensure phone and computer are on same WiFi
-- Check firewall isn't blocking port 5000
-
-**"Module not found errors"**
-```bash
-cd mobile
-npm install
-rm -rf node_modules/.bin
-npm start
-```
-
-**Expo connection issues**
-- Make sure you're logged in: `expo login`
-- Try clearing cache: `npm start -- --clear`
-- Restart Expo server
-
-## Project Walkthrough
-
-### Backend Flow
-1. **User Registration** → Password hashed with bcrypt → Stored in MongoDB
-2. **User Login** → Password verified → JWT token generated → Token sent to client
-3. **Task Operations** → Middleware validates token → Controller processes request → Response sent
-
-### Frontend Flow
-1. **App Launch** → Check AsyncStorage for token → Navigate to Login or Home
-2. **Login/Signup** → Submit credentials → Store token in AsyncStorage → Navigate to Home
-3. **Home Screen** → TanStack Query fetches tasks → Display task list
-4. **Create Task** → Form validation → Mutation submits to API → Query invalidated → List refreshes
-5. **Update/Delete** → Optimistic update → API request → Revalidate on success
-
-### 3D UI Features
-- **Glassmorphic Cards**: Semi-transparent backgrounds with blur effects
-- **Dark Theme**: #0f0f2e background with vibrant accents
-- **Gradients**: Subtle color transitions
-- **Shadows**: Layered depth effect
-- **Animations**: Smooth transitions between screens and states
-
-## Security Notes
-
-⚠️ **Production Checklist**
-- Change `JWT_SECRET` to a strong random string
-- Enable MongoDB Atlas IP whitelist
-- Use HTTPS in production
-- Store sensitive data securely
-- Implement rate limiting
-- Add input validation on frontend & backend
-- Use environment variables for all secrets
-
-## Next Steps
-
-1. ✅ Complete all required features from the task document
-2. ✅ Test all CRUD operations
-3. ✅ Deploy backend to Render, Railway, or Heroku
-4. ✅ Deploy frontend to Expo or build APK/IPA
-5. ✅ Update production API URL
-6. ✅ Monitor error logs with Sentry
-
-## Files Summary
-
-### Backend (9 files)
-- `backend/src/index.js` - Express server configuration
-- `backend/src/models/User.js` - User schema with password hashing
-- `backend/src/models/Task.js` - Task schema with user reference
-- `backend/src/controllers/authController.js` - Signup/login logic
-- `backend/src/controllers/taskController.js` - Task CRUD operations
-- `backend/src/routes/authRoutes.js` - Auth endpoints
-- `backend/src/routes/taskRoutes.js` - Task endpoints
-- `backend/src/middleware/authMiddleware.js` - JWT verification
-- `backend/.env` - Environment configuration
-
-### Frontend (7+ files)
-- `mobile/App.tsx` - Root component with navigation & query provider
-- `mobile/screens/LoginScreen.tsx` - Login form with 3D styling
-- `mobile/screens/SignupScreen.tsx` - Signup form with validation
-- `mobile/screens/HomeScreen.tsx` - Task list with CRUD operations
-- `mobile/services/api.ts` - Axios instance with interceptors
-- `mobile/services/queries.ts` - TanStack Query hooks
-- `mobile/types/index.ts` - TypeScript type definitions
-- `mobile/app.json` - Expo configuration
-
-## Support
-
-For issues or questions:
-1. Check the Troubleshooting section
-2. Review console logs for error messages
-3. Verify backend is running and accessible
-4. Check MongoDB connection string in `.env`
-5. Ensure API URL is correct in `services/api.ts`
 
 ---
+
+# Run Backend
+
+```bash
+npm run dev
+```
+
+Expected Output:
+
+```bash
+✓ Connected to MongoDB
+✓ Server running on http://localhost:5000
+```
+
+---
+
+# Running the Full Project
+
+# Terminal 1
+
+```bash
+cd backend
+npm run dev
+```
+
+# Terminal 2
+
+```bash
+cd mobile
+npx expo start
+```
+
+---
+
+# Screens Included
+
+* Login Screen
+* Signup Screen
+* Home Dashboard
+* Task List Screen
+* Task Statistics Section
+* Progress Tracking UI
+* Empty State UI
+* Filter Tabs
+
+---
+
+# UI Design Highlights
+
+## Glassmorphism
+
+Modern translucent UI cards with blur effects.
+
+---
+
+## Dark Theme
+
+Custom dark color palette with vibrant accents.
+
+---
+
+## Animations
+
+Smooth transitions and task interactions.
+
+---
+
+## Responsive Mobile Design
+
+Optimized for modern smartphones.
+
+---
+
+# Troubleshooting
+
+# MongoDB Connection Issues
+
+Check:
+
+* Correct MongoDB URI
+* Atlas IP whitelist
+* Internet connection
+
+---
+
+# Expo Issues
+
+Try:
+
+```bash
+npx expo start --clear
+```
+
+---
+
+# API Connection Issues
+
+Verify:
+
+* Backend running
+* Correct API URL
+* Internet access
+
+---
+
+# Future Improvements
+
+* Edit Task Feature
+* Push Notifications
+* Offline Support
+* Calendar Integration
+* Due Dates
+* Task Categories
+* Dark/Light Theme Toggle
+* App Store Deployment
+
+
+---
+
+# Author
+
+Aditi Jain
+
+---
+
+# License
+
+MIT License

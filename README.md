@@ -1,6 +1,6 @@
 # Task Tracker Mobile App
 
-A modern full-stack Task Tracker Mobile Application built using React Native, Expo, TypeScript, Node.js, Express.js, and MongoDB Atlas.
+A full-stack Task Tracker Mobile Application built using React Native, Expo, TypeScript, Node.js, Express.js, and MongoDB Atlas.
 
 This project was developed as part of a Full Stack Developer Internship Assignment and demonstrates frontend + backend integration, authentication, REST APIs, state management, cloud deployment, and modern mobile UI/UX practices.
 
@@ -627,12 +627,6 @@ Verify:
 * Dark/Light Theme Toggle
 * App Store Deployment
 
-
----
-
-# Author
-
-Aditi Jain
 
 ---
 
